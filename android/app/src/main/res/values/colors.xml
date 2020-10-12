@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#c2185b</color>
+    <color name="colorOnPrimary">#ffffff</color>
+    <color name="colorPrimaryVariant">#8c0032</color>
+    <color name="colorSecondary">#1565c0</color>
+    <color name="colorOnSecondary">#ffffff</color>
+    <color name="colorSecondrayVariant">#003c8f</color>
+    <color name="colorBackground">#dcedc8</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorSurface">#c6ff00</color>
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorError">#f8bbf0</color>
+    <color name="colorOnError">#000000</color>
+
+
+
+
+
+
+
+ <!--
+    <color name="colorPrimary">#E0E0E0</color>
+    <color name="colorPrimaryDark">#FBB8AC</color>
+    <color name="colorAccent">#FEDBD0</color>
+
+    <color name="textColorPrimary">#442C2E</color>
+    <color name="toolbarIconColor">@color/textColorPrimary</color>
+    <color name="textInputOutlineColor">#FBB8AC</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
+-->
+
+
+</resources>

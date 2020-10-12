@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hub_nav_graph"
+    app:startDestination="@id/fragment_hub">
+
+    <fragment
+        android:id="@+id/fragment_hub"
+        android:label="Hub"
+        android:name="com.tmjee.myathena.ui.hub.HubFragment">
+        <argument
+            android:name="userId"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_to_home"
+            app:popUpTo="@id/fragment_hub"
+            app:popUpToInclusive="true"
+            app:destination="@id/home_nav_graph">
+
+            <argument
+                android:name="userId"
+                app:argType="integer"/>
+            <argument
+                android:name="accountId"
+                app:argType="integer"/>
+        </action>
+    </fragment>
+
+</navigation>

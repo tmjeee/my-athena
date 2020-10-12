@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_login"
+    android:id="@+id/login_nav_graph">
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.tmjee.myathena.ui.login.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_to_pin_validation"
+            app:destination="@+id/fragment_pin_validation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_pin_validation"
+        android:label="Pin Validation"
+        android:name="com.tmjee.myathena.ui.pinValidation.PinValidationFragment">
+        <argument
+            android:name="userId"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_to_hub"
+            app:popUpTo="@id/fragment_login"
+            app:popUpToInclusive="true"
+            app:destination="@id/hub_nav_graph">
+            <argument
+                android:name="userId"
+                app:argType="integer"/>
+        </action>
+    </fragment>
+
+</navigation>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="transaction"
+            type="com.tmjee.myathena.domain.Transaction" />
+        <variable
+            name="UIUtil"
+            type="com.tmjee.myathena.ui.UIUtil"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        app:strokeWidth="5dp"
+        app:cardElevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/Title"
+                    android:textAppearance="?attr/textAppearanceHeadline3"
+                    android:text="@{UIUtil.toDate(transaction.date, ``) + ` (` + UIUtil.toDay(transaction.date, ``) + `)`}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontal"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

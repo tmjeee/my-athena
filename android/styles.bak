@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ToolbarStyleTitle</item>
+    </style>
+    <style name="ToolbarStyleTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="ToolbarNavigationButtonStyle">
+        <item name="android:textAppearance">@style/TextAppearance1</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/ActionBarTitleStyle</item>
+    </style>
+    <style name="ActionBarTitleStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:color">@android:color/white</item>
+        <item name="android:icon">@android:color/white</item>
+    </style>
+
+
+    <style name="TextAppearance1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:color">@android:color/white</item>
+        <item name="android:icon">@android:color/white</item>
+    </style>
+
+    <!-- Collapsable Toolbar Style -->
+    <style name="ExpandedAppBarStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <!--item name="android:textStyle">bold</item-->
+    </style>
+    <style name="CollapsedAppBarStyle" parent="@android:style/TextAppearance.Medium">
+        <!--item name="android:textSize">20sp</item-->
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="CollapsableToolbarContentStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Action Bar theme -->
+    <style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@android:color/white</item>
+        <!--item name="android:textColor">@android:color/white</item-->
+    </style>
+
+
+    <!-- divider -->
+    <style name="Divider">
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+    <style name="DividerHorizontal" parent="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+    <style name="DividerVertical" parent="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+    <!-- Transaction Page -->
+    <style name="Title" parent="android:TextAppearance.Medium">
+    </style>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/logout_nav_graph"
+    app:startDestination="@id/fragment_logout">
+
+    <fragment
+        android:id="@+id/fragment_logout"
+        android:name="com.tmjee.myathena.ui.logout.LogoutFragment"
+        android:label="Logout">
+        <action
+            android:id="@+id/action_to_login"
+            app:popUpTo="@id/logout_nav_graph"
+            app:popUpToInclusive="true"
+            app:destination="@id/login_nav_graph"/>
+    </fragment>
+
+</navigation>

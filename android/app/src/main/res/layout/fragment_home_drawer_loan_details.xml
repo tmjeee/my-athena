@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.tmjee.myathena.ui.loanDetails.HomeDrawerLoanDetailsFragmentViewModel" />
+        <variable
+            name="UIUtil"
+            type="com.tmjee.myathena.ui.UIUtil" />
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/appBarLayoutIncluded"
+            layout="@layout/collapsable_loan_details_appbar_layout" />
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swip_refresh_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:strokeWidth="5dp"
+                        app:cardElevation="10dp"
+                        android:layout_margin="10dp"
+                        style="@style/Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/label_extra_payment"
+                                android:layout_alignParentTop="true"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.extraPayment, `Extra Payment:`)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_total_monthly_payment"
+                                android:layout_below="@id/label_extra_payment"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.totalMonthlyPayment, `Total Monthly Payment`)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_min_monthly_repayment"
+                                android:layout_below="@id/label_total_monthly_payment"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.minMonthlyRepayment, `Min Monthly Repayment`)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+
+                            <TextView
+                                android:id="@+id/label_interest_rate"
+                                android:layout_below="@id/label_min_monthly_repayment"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.interestRate , `Interest Rate: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+
+                            <TextView
+                                android:id="@+id/label_type_of_repayment"
+                                android:layout_below="@id/label_interest_rate"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toText(viewModel.loanDetails.typeOfRepayment.toString(), `Type of Repayment: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_loan_type"
+                                android:layout_below="@id/label_type_of_repayment"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toText(viewModel.loanDetails.loanType.toString(), `Loan Type: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_loan_term"
+                                android:layout_below="@id/label_loan_type"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toText(viewModel.loanDetails.loanTerm, `Loan Term: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_term_remaining"
+                                android:layout_below="@id/label_loan_term"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toText(viewModel.loanDetails.termRemaining, `Term Remaining:`)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        app:strokeWidth="5dp"
+                        app:cardElevation="10dp"
+                        android:layout_margin="10dp"
+                        style="@style/Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/label_loan_start_date"
+                                android:layout_alignParentTop="true"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toDate(viewModel.loanDetails.loanStartDate, `Loan Start Date: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_original_loan_amount"
+                                android:layout_below="@id/label_loan_start_date"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.originalLoanAmount, `Original Loan Amount: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_amount_left_to_pay_off"
+                                android:layout_below="@id/label_original_loan_amount"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toCurrency(viewModel.loanDetails.amountLeftToPayOff, `Amount Left to pay off: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_account_holders"
+                                android:layout_below="@id/label_amount_left_to_pay_off"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toListString(viewModel.loanDetails.accountHolders, `Account Holders: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/label_features"
+                                android:layout_below="@id/label_account_holders"
+                                android:textAppearance="?attr/textAppearanceHeadline5"
+                                android:text="@{UIUtil.toListString(viewModel.loanDetails.features, `Features: `)}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

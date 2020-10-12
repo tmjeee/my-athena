@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/login_nav_graph">
+
+    <!-- global actions for options menu navigation -->
+    <action
+        android:id="@+id/action_to_profile_and_settings"
+        app:destination="@id/preferences_nav_graph" />
+    <action
+        android:id="@+id/action_to_hub"
+        app:popUpTo="@id/hub_nav_graph"
+        app:destination="@id/hub_nav_graph">
+        <argument
+            android:name="userId"
+            app:argType="integer"/>
+    </action>
+    <action
+        android:id="@+id/action_to_logout"
+        app:popUpTo="@id/login_nav_graph"
+        app:popUpToInclusive="true"
+        app:destination="@id/logout_nav_graph" />
+
+    <!-- nested navigation graphs -->
+    <include app:graph="@navigation/logout_nav_graph"/>
+    <include app:graph="@navigation/preferences_nav_graph" />
+    <include app:graph="@navigation/login_nav_graph" />
+    <include app:graph="@navigation/hub_nav_graph" />
+    <include app:graph="@navigation/home_nav_graph" />
+
+</navigation>

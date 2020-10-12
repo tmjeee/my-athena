@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/fragment_profile_and_settings"
+    android:id="@+id/preferences_nav_graph">
+
+    <fragment
+        android:id="@+id/fragment_profile_and_settings"
+        android:name="com.tmjee.myathena.ui.profileAndSettings.ProfileAndSettingsFragment"
+        android:label="Profile and Settings" />
+
+</navigation>

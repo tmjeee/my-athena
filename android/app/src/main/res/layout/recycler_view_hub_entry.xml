@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="account"
+            type="com.tmjee.myathena.domain.Account" />
+        <variable
+            name="UIUtil"
+            type="com.tmjee.myathena.ui.UIUtil" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:strokeWidth="5dp"
+        app:cardElevation="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <TextView
+                android:id="@+id/accountName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{account.accountName}"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintBottom_toTopOf="@+id/amountOutstanding"
+                app:layout_constraintLeft_toRightOf="@id/left_vertical_guideline"
+                app:layout_constraintRight_toLeftOf="@id/right_vertical_guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:layout_editor_absoluteX="44dp" />
+
+            <TextView
+                android:id="@+id/amountOutstanding"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{UIUtil.toCurrency(account.amountOutstanding, ``)}"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintBottom_toTopOf="@id/amountAvailable"
+                app:layout_constraintLeft_toRightOf="@id/left_vertical_guideline"
+                app:layout_constraintRight_toLeftOf="@id/right_vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/accountName" />
+
+            <TextView
+                android:id="@+id/amountAvailable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{UIUtil.toCurrency(account.amountAvailable, `Available: `)}"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintTop_toBottomOf="@id/amountOutstanding"
+                app:layout_constraintLeft_toRightOf="@id/left_vertical_guideline"
+                app:layout_constraintRight_toLeftOf="@id/right_vertical_guideline"
+                tools:layout_editor_absoluteY="357dp" />
+
+
+            <LinearLayout
+                android:id="@+id/bsb_and_account"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/amountAvailable"
+                app:layout_constraintLeft_toRightOf="@id/left_vertical_guideline"
+                app:layout_constraintRight_toLeftOf="@id/right_vertical_guideline"
+                app:layout_constraintBottom_toTopOf="@id/accountAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/bsb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{UIUtil.toText(account.bsb, `BSB: `)}"
+                    android:layout_marginRight="10dp"
+                    android:textAppearance="?attr/textAppearanceBody1"/>
+
+                <TextView
+                    android:id="@+id/accountNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{UIUtil.toText(account.accountNumber, `Acc no: `)}"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:layout_marginRight="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/accountAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{UIUtil.toText(account.accountAddress, ``)}"
+                android:textAppearance="?attr/textAppearanceBody1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/left_vertical_guideline"
+                app:layout_constraintRight_toLeftOf="@id/right_vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bsb_and_account"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

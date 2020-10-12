@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/satement_bottom_navigation_nav_graph.xml"
+    app:startDestination="@id/fragment_statement_bottom_navigation_action_1">
+
+
+    <fragment
+        android:label="Action 1"
+        android:id="@+id/fragment_statement_bottom_navigation_action_1"
+        android:name="com.tmjee.myathena.ui.statements.StatementBottomNavigationAction1Fragment"
+        />
+
+    <fragment
+        android:label="Action 2"
+        android:id="@+id/fragment_statement_bottom_navigation_action_2"
+        android:name="com.tmjee.myathena.ui.statements.StatementBottomNavigationAction2Fragment"
+        />
+
+
+
+</navigation>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.tmjee.myathena.domain.TransactionType"/>
+        <import type="android.view.View"/>
+        <variable
+            name="entry"
+            type="com.tmjee.myathena.domain.TransactionEntry" />
+        <variable
+            name="UIUtil"
+            type="com.tmjee.myathena.ui.UIUtil" />
+    </data>
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:text="@{entry.description}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:visibility="@{entry.type == TransactionType.DEBIT ? View.VISIBLE : View.GONE}"
+            android:text="@{String.valueOf(entry.amount)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:visibility="@{entry.type == TransactionType.CREDIT ? View.VISIBLE : View.GONE}"
+            android:text="@{String.valueOf(entry.amount)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_below="@id/description"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:gravity="right"
+            android:text="@{String.valueOf(entry.balance)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+    <!--
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@{entry.description}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:visibility="@{entry.type == TransactionType.DEBIT ? View.VISIBLE : View.GONE}"
+            android:text="@{String.valueOf(entry.amount)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:visibility="@{entry.type == TransactionType.CREDIT ? View.VISIBLE : View.GONE}"
+            android:text="@{String.valueOf(entry.amount)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@{String.valueOf(entry.balance)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="@{String.valueOf(entry.type)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    -->
+</layout>

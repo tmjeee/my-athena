@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:key="switchOption1"
+        android:title="Switch Option #1" />
+
+    <SwitchPreferenceCompat
+        android:key="switchOption2"
+        android:title="Switch Option #2" />
+
+    <SwitchPreferenceCompat
+        android:key="switchOption3"
+        android:title="Switch Option #3" />
+
+    <SwitchPreferenceCompat
+        android:key="switchOption4"
+        android:title="Switch Option #4" />
+
+    <SwitchPreferenceCompat
+        android:key="switchOption5"
+        android:title="Switch Option #5" />
+</PreferenceScreen>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_nav_graph.xml"
+    app:startDestination="@id/home_drawer_transactions_fragment">
+
+    <fragment
+        android:label="Transactions"
+        android:id="@+id/home_drawer_transactions_fragment"
+        android:name="com.tmjee.myathena.ui.transactions.HomeDrawerTransactionsFragment">
+    </fragment>
+
+    <!-- loanDetails -->
+    <fragment
+        android:id="@+id/home_drawer_loan_details_fragment"
+        android:label="Loan Details"
+        android:name="com.tmjee.myathena.ui.loanDetails.HomeDrawerLoanDetailsFragment">
+    </fragment>
+
+    <!-- payeeAndLinkedAccounts -->
+    <fragment
+        android:id="@+id/home_drawer_payee_and_linked_accounts_fragment"
+        android:label="Payee and Linked Accounts"
+        android:name="com.tmjee.myathena.ui.payeeAndLinkedAccounts.HomeDrawerPayeeAndLinkedAccountsFragment">
+    </fragment>
+
+    <!-- paymentAndTransfers -->
+    <fragment
+        android:id="@+id/home_drawer_payment_and_transfers_fragment"
+        android:label="Payment and Transfers"
+        android:name="com.tmjee.myathena.ui.paymentAndTransfers.HomeDrawerPaymentAndTransfersFragment">
+    </fragment>
+
+    <!-- statements -->
+    <fragment
+        android:id="@+id/home_drawer_statements_fragment"
+        android:label="Statements"
+        android:name="com.tmjee.myathena.ui.statements.HomeDrawerStatementFragment">
+    </fragment>
+
+</navigation>

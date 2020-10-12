@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:label="Home"
+        android:name="com.tmjee.myathena.ui.home.HomeFragment">
+        <argument
+            android:name="userId"
+            app:argType="integer"/>
+        <argument
+            android:name="accountId"
+            app:argType="integer"/>
+    </fragment>
+</navigation>
